@@ -38,11 +38,11 @@ class Face_Recognition:
         background_img.place(x=0, y=0, width=900, height=600)
 
         train_btn = Button(background_img, command=self.train_classifier, text="Train DataSet", width=15, font=(
-            "verdana", 10, "bold"), cursor="hand2", bg="#2DC6DB", fg="#023137")
+            "verdana", 10, "bold"), cursor="hand2", bg="#2DC6DB", fg="#ffffff")
         train_btn.place(x=95, y=240, width=120, height=35)
 
         recogn_btn = Button(background_img, command=self.face_recog, text="Recognition", width=15, font=(
-            "verdana", 10, "bold"), cursor="hand2", bg="#30FFC1", fg="#023137")
+            "verdana", 10, "bold"), cursor="hand2", bg="#30FFC1", fg="#ffffff")
         recogn_btn.place(x=430, y=500, width=120, height=35)
 
     # =====================Training Satasets===================

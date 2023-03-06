@@ -5,7 +5,6 @@ from PIL import Image, ImageTk
 from student import Student
 from face_recognition import Face_Recognition
 from attendance import Attendance
-from train import Train
 from developer import Developer
 import os
 import pyttsx3
