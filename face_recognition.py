@@ -29,7 +29,7 @@ class Face_Recognition:
         self.engine.runAndWait()
 
         # Background Image
-        background_img = Image.open("./img/student_details.png")
+        background_img = Image.open("./img/recognition_train.png")
         background_img = background_img.resize(
             (890, 600), Image.Resampling.LANCZOS)
         self.photoimg1 = ImageTk.PhotoImage(background_img)
@@ -39,11 +39,11 @@ class Face_Recognition:
 
         train_btn = Button(background_img, command=self.train_classifier, text="Train DataSet", width=15, font=(
             "verdana", 10, "bold"), cursor="hand2", bg="#2DC6DB", fg="#023137")
-        train_btn.place(x=300, y=450, width=120, height=35)
+        train_btn.place(x=95, y=240, width=120, height=35)
 
         recogn_btn = Button(background_img, command=self.face_recog, text="Recognition", width=15, font=(
             "verdana", 10, "bold"), cursor="hand2", bg="#30FFC1", fg="#023137")
-        recogn_btn.place(x=450, y=450, width=120, height=35)
+        recogn_btn.place(x=430, y=500, width=120, height=35)
 
     # =====================Training Satasets===================
 
