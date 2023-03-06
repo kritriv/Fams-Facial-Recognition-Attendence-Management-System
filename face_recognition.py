@@ -80,7 +80,7 @@ class Face_Recognition:
     # =====================Attendance===================
 
     def mark_attendance(self, i, r, n, d, al):
-        with open("attendance.csv", "r+", newline="\n") as f:
+        with open("attendance_record/attendance.csv", "r+", newline="\n") as f:
             myDatalist = f.readlines()
             name_list = []
             for line in myDatalist:

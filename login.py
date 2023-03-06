@@ -18,8 +18,9 @@ class Login:
 
         self.login_root = login_root
         self.login_root.title("Login")
-        # window.iconbitmap("logo.ico")
+        # self.window.iconbitmap("logo.ico")
         self.login_root.geometry("1280x700+0+0")
+
 
         self.var_ssq = StringVar()
         self.var_sa = StringVar()
@@ -56,7 +57,7 @@ class Login:
         pwd.place(x=835, y=390)
 
         # entry2
-        self.txtpwd = ttk.Entry(background_img, font=(
+        self.txtpwd = ttk.Entry(background_img, show="*", font=(
             "times new roman", 15, "bold"))
         self.txtpwd.place(x=940, y=390, width=180)
 

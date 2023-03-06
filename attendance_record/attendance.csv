@@ -1,0 +1,10 @@
+Student ID,Roll No,Name,Time,Date,Status
+
+(2,), ('200100287084',), ('Piyush Saini',),('B.Sc Honours',), 22:39:05, 30/11/2022, Present
+(2,), ('200100287084',), ('Piyush Saini',),('B.Sc Honours',), 22:39:05, 30/11/2022, Present
+(2,), ('200100287084',), ('Piyush Saini',),('B.Sc Honours',), 22:39:05, 30/11/2022, Present
+
+(2,) ('200100287084',) ('Piyush Saini',)  ('B.Sc Honours',) 22:41:02 30/11/2022 Present
+(2,) ('200100287084',) ('Piyush Saini',)  ('B.Sc Honours',) 22:41:02 30/11/2022 Present
+
+[(1, 'Vishal Saraiwal', 'B.Sc Honours', 'Computer Science', 'IIIrd Year', 'Semester 5', '20036778', '200100287103', '03/04/2003', 'Male', '9193378534', 'vishalsaraiwal68@gmail.com', 'Yes')] 05:55:59 01/12/2022 Present

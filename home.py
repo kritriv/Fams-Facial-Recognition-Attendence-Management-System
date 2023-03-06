@@ -16,6 +16,8 @@ class Face_Recognition_system:
         self.root.geometry("1430x790+0+0")
         self.root.title(
             "FAMS - Facial Recognition Attendance Management System")
+        # self.root.wm_iconbitmap("icon.png")
+
         # Assistance Speak Variable
         self.engine = pyttsx3.init()
         self.voices = self.engine.getProperty('voices')
