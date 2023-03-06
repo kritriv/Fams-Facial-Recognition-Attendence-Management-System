@@ -232,33 +232,6 @@ class Student:
             "times new roman", 12, "bold"), fg="#2DC6DB")
         Bottom_frame.place(x=70, y=400, width=770, height=150)
 
-        # Search System Frame
-        # search_frame = LabelFrame(Bottom_frame, bd=2, bg="white", relief=RIDGE, text="Search System", font=(
-        #     "times new roman", 12, "bold"), fg="blue")
-        # search_frame.place(x=20, y=10, width=480, height=80)
-
-        # stream_label = Label(search_frame, text="Search By :", font=(
-        #     "times new roman", 12, "bold"), bg="white")
-        # stream_label.grid(row=0, column=2, padx=10, sticky=W)
-
-        # search_combo = ttk.Combobox(search_frame, font=(
-        #     "times new roman", 12, "bold"), state="readonly", width=8)
-        # search_combo["value"] = ("Select", "Enroll No", "Roll No")
-        # search_combo.current(0)
-        # search_combo.grid(row=0, column=3, padx=5, sticky=W)
-
-        # search_entry = ttk.Entry(
-        #     search_frame, textvariable=self.var_search, width=10, font=("times new roman", 12, "bold"))
-        # search_entry.grid(row=0, column=4, padx=10, sticky=W)
-
-        # search_btn = Button(search_frame,  text="Search", width=6, font=(
-        #     "times new roman", 12, "bold"), bg="blue", fg="white")
-        # search_btn.grid(row=0, column=5, padx=5)
-
-        # show_all_btn = Button(search_frame,  text="Show All", width=8, font=(
-        #     "times new roman", 12, "bold"), bg="blue", fg="white")
-        # show_all_btn.grid(row=0, column=6, padx=5)
-
         # TableFrame
         table_frame = Frame(Bottom_frame, bd=2, bg="white", relief=RIDGE)
         table_frame.place(x=20, y=10, width=720, height=100)

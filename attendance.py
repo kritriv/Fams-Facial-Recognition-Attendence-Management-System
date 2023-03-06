@@ -90,13 +90,6 @@ class Attendance:
             Top_frame, textvariable=self.var_roll, width=12, font=("times new roman", 10, "bold"))
         student_roll_entry.grid(row=0, column=5, padx=5, pady=5, sticky=W)
 
-        # # Department
-        # dep_label = Label(Top_frame,text="Department:",font=("times new roman",12,"bold"),fg="navyblue",bg="white")
-        # dep_label.grid(row=1,column=2,padx=5,pady=5,sticky=W)
-
-        # dep_entry = ttk.Entry(Top_frame,textvariable=self.var_dep,width=15,font=("times new roman",12,"bold"))
-        # dep_entry.grid(row=1,column=3,padx=5,pady=5,sticky=W)
-
         # time
         time_label = Label(Top_frame, text="Time:", font=(
             "times new roman", 10, "bold"), bg="white")
