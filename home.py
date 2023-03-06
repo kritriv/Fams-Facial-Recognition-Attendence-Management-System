@@ -26,14 +26,6 @@ class Face_Recognition_system:
             'Welcome to Fams Facial Recognition Attendance Management System')
         self.engine.runAndWait()
 
-        # Head Image
-        # head_img = Image.open("./img/head.png")
-        # head_img = head_img.resize((1500, 130), Image.Resampling.LANCZOS)
-        # self.photoimg1 = ImageTk.PhotoImage(head_img)
-
-        # f_lbl = Label(self.root, image=self.photoimg1)
-        # f_lbl.place(x=0, y=0, width=1500, height=130)
-
         # Background Image
         background_img = Image.open("./img/Home.png")
         background_img = background_img.resize(
@@ -81,24 +73,6 @@ class Face_Recognition_system:
                                  command=self.recognition_img, cursor="hand2", relief=RIDGE, bd=0)
         Recognition_btn.place(x=38, y=365, width=260, height=36)
 
-        # # Btn Image 5 - Train Data
-        # Train_btn = Image.open("./img/Train_btn.png")
-        # Train_btn = Train_btn.resize((260, 40), Image.Resampling.LANCZOS)
-        # self.photoimg6 = ImageTk.PhotoImage(Train_btn)
-
-        # Train_btn = Button(bg_img, image=self.photoimg6,
-        #                    command=self.train_data, cursor="hand2", relief=RIDGE, bd=0)
-        # Train_btn.place(x=38, y=420, width=260, height=36)
-
-        # # Btn Image 6 - About
-        # About_btn = Image.open("./img/About_btn.png")
-        # About_btn = About_btn.resize((150, 40), Image.Resampling.LANCZOS)
-        # self.photoimg7 = ImageTk.PhotoImage(About_btn)
-
-        # About_btn = Button(bg_img, image=self.photoimg7,
-        #                    cursor="hand2", relief=RIDGE, bd=0)
-        # About_btn.place(x=90, y=510, width=150, height=36)
-
         # Btn Image 7 - Developer
         Developer_btn = Image.open("./img/Developer_btn.png")
         Developer_btn = Developer_btn.resize(
@@ -107,7 +81,7 @@ class Face_Recognition_system:
 
         Developer_btn = Button(bg_img, image=self.photoimg8, command=self.Developer_fun,
                                cursor="hand2", relief=RIDGE, bd=0)
-        Developer_btn.place(x=90, y=565, width=150, height=36)
+        Developer_btn.place(x=90, y=545, width=150, height=36)
 
         # Btn Image 8 - Log Out
         logout_btn = Image.open("./img/logout_btn.png")
@@ -116,7 +90,7 @@ class Face_Recognition_system:
 
         logout_btn = Button(bg_img, image=self.photoimg9, command=self.Close,
                             cursor="hand2", relief=RIDGE, bd=0)
-        logout_btn.place(x=90, y=620, width=150, height=36)
+        logout_btn.place(x=90, y=600, width=150, height=36)
 
     # Button Functions
 
@@ -127,10 +101,6 @@ class Face_Recognition_system:
     def attendance_mng(self):
         self.new_window = Toplevel(self.root)
         self.app = Attendance(self.new_window)
-
-    # def train_data(self):
-    #     self.new_window = Toplevel(self.root)
-    #     self.app = Train(self.new_window)
 
     def recognition_img(self):
         self.new_window = Toplevel(self.root)

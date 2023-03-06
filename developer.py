@@ -27,7 +27,7 @@ class Developer:
             'Here You will know all about, Developer of this Application, Vishal Saraiwal')
 
         # Background Image
-        background_img = Image.open("./img/student_details.png")
+        background_img = Image.open("./img/Developer.png")
         background_img = background_img.resize(
             (890, 600), Image.Resampling.LANCZOS)
         self.photoimg1 = ImageTk.PhotoImage(background_img)
