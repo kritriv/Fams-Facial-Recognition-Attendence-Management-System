@@ -29,8 +29,8 @@ splash_window.engine = pyttsx3.init('sapi5')
 splash_window.voices = splash_window.engine.getProperty('voices')
 splash_window.engine.setProperty('voice', splash_window.voices[0].id)
 
-# splash_window.engine.say('Initializing is in process, please wait')
-# splash_window.engine.runAndWait()
+splash_window.engine.say('Initializing is in process, please wait')
+splash_window.engine.runAndWait()
 
 
 def mainWin(self):
@@ -57,8 +57,8 @@ def Login_win():
     Login_window.voices = Login_window.engine.getProperty('voices')
     Login_window.engine.setProperty('voice', Login_window.voices[1].id)
 
-    # Login_window.engine.say('Welcome Admin, Please Enter Your Login Details')
-    # Login_window.engine.runAndWait()
+    Login_window.engine.say('Welcome Admin, Please Enter Your Login Details')
+    Login_window.engine.runAndWait()
 
     def login(self):
         if (self.txtuser.get() == "" or self.txtpwd.get() == ""):
@@ -120,12 +120,12 @@ def Login_win():
         "times new roman", 15, "bold"))
     Login_window.txtpwd.place(x=940, y=390, width=180)
 
-    Login_btn = Button(background_img, command=login(), text="LOGIN NOW", width=15, font=(
+    Login_btn = Button(background_img, command=login, text="LOGIN NOW", width=15, font=(
         "verdana", 10, "bold"), bg="#2DC6DB", fg="#023137")
     Login_btn.place(x=920, y=450, width=120, height=35)
 
 
-splash_window.after(1000, Login_win)
+splash_window.after(10000, Login_win)
         # self.root.overrideredirect(1)
 splash_window.overrideredirect(1)
 

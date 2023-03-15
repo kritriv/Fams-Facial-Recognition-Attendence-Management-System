@@ -10,6 +10,8 @@ from time import strftime
 from datetime import datetime
 import time
 import pyttsx3
+import re
+import csv
 
 
 class Face_Recognition:
@@ -24,9 +26,9 @@ class Face_Recognition:
         self.voices = self.engine.getProperty('voices')
         self.engine.setProperty('voice', self.voices[1].id)
 
-        self.engine.say(
-            'First Click on Training Dataset Button, Before recognize the students')
-        self.engine.runAndWait()
+        # self.engine.say(
+        #     'First Click on Training Dataset Button, Before recognize the students')
+        # self.engine.runAndWait()
 
         # Background Image
         background_img = Image.open("./img/recognition_train.png")
@@ -82,23 +84,29 @@ class Face_Recognition:
     def mark_attendance(self, i, r, n, d, al):
         with open("attendance_record/attendance.csv", "r+", newline="\n") as f:
             myDatalist = f.readlines()
+            print(myDatalist)
             name_list = []
             for line in myDatalist:
-                entry = line.split((","))
-                name_list.append(entry[0])
-            if n in name_list:
+                # entry = line.split((","))
+                name_list.append(line[0])
+
+            if i in name_list:
+                
                 print("already Present")
             else:
+                # print(name_list)
+
                 now = datetime.now()
                 d1 = now.strftime("%d/%m/%Y")
                 dtString = now.strftime("%H:%M:%S")
-                f.writelines(f"\n{i} {r} {n} {al} {d} {dtString} {d1} Present")
+                f.writelines(
+                    f"\n     {i},     {r},     {n},         {dtString},     {d1},     Present")
 
  # ================face recognition==================
 
     def face_recog(self):
-        self.engine.say('Recognition mode is on')
-        self.engine.runAndWait()
+        # self.engine.say('Recognition mode is on')
+        # self.engine.runAndWait()
 
         def draw_boundray(img, classifier, scaleFactor, minNeighbors, color, text, clf):
             gray_image = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
@@ -124,11 +132,15 @@ class Face_Recognition:
                 cursor.execute(
                     "select Name from student where Student_ID="+str(id))
                 n = cursor.fetchone()
+                n = str(n)[2:-3]
+
                 # n="+".join(n)
 
                 cursor.execute(
                     "select Roll from student where Student_ID="+str(id))
                 r = cursor.fetchone()
+                r = str(r)[2:-3]
+                # print(r)
                 # r="+".join(r)
 
                 cursor.execute(
@@ -139,7 +151,8 @@ class Face_Recognition:
                 cursor.execute(
                     "select Student_ID from student where Student_ID="+str(id))
                 i = cursor.fetchone()
-                # i="+".join(i)
+                i = str(i)[1:-2]
+                # print(i)
 
                 if confidence > 87:
                     cv2.putText(
@@ -183,8 +196,8 @@ class Face_Recognition:
                 break
         videoCap.release()
         cv2.destroyAllWindows()
-        self.engine.say('Recognition mode is off')
-        self.engine.runAndWait()
+        # self.engine.say('Recognition mode is off')
+        # self.engine.runAndWait()
 
 
 if __name__ == "__main__":
