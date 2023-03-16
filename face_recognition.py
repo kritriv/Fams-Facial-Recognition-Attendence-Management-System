@@ -82,25 +82,66 @@ class Face_Recognition:
     # =====================Attendance===================
 
     def mark_attendance(self, i, r, n, d, al):
-        with open("attendance_record/attendance.csv", "r+", newline="\n") as f:
-            myDatalist = f.readlines()
-            print(myDatalist)
-            name_list = []
-            for line in myDatalist:
-                # entry = line.split((","))
-                name_list.append(line[0])
+        now = datetime.now()
+        date_1 = now.strftime("%d-%m-%Y")
 
-            if i in name_list:
-                
-                print("already Present")
-            else:
-                # print(name_list)
+        f=  open("attendance_record/" + date_1 + ".csv", "a+")
+        
+        myDatalist = []
+        f.seek(0)
+        while True:
+            a = f.readline().strip().split(",")
+            # print('a',a)
+            if a == ['']:
+                break
+            myDatalist.append(a)
+        # print("myDatalist",myDatalist)
+        name_list = []
+        for line in myDatalist:
+            # entry = line.split((","))
+            # print(name_list)
+            # if len(name_list ) > 0:
+                    
+            name_list.append(line[1].strip())
+                # print(name_list[1][1])
+        # print(name_list)
+            
+        if r not in name_list:
 
-                now = datetime.now()
-                d1 = now.strftime("%d/%m/%Y")
-                dtString = now.strftime("%H:%M:%S")
-                f.writelines(
-                    f"\n     {i},     {r},     {n},         {dtString},     {d1},     Present")
+            now = datetime.now()
+            d1 = now.strftime("%d/%m/%Y")
+            dtString = now.strftime("%H:%M:%S")
+            f.write(     i + ","  +   r+ ","   +   n+ ","     +     dtString+ ","   +   d1+ ","   +   "Present")
+            # f.writelines(f"     {i},     {r},     {n},         {dtString},     {d1},     Present")
+
+
+
+            # if i in name_list:
+            #     print("already Present")
+            # else:
+            #     now = datetime.now()
+            #     d1 = now.strftime("%d/%m/%Y")
+            #     dtString = now.strftime("%H:%M:%S")
+            #     f.writelines(
+            #         f"\n     {i},     {r},     {n},         {dtString},     {d1},     Present")
+
+
+    # def mark_attendance(self, i, r, n, d, al):
+    #     with open("attendance_record/attendance.csv", "r+", newline="\n") as f:
+    #         myDatalist = f.readlines()
+    #         name_list = []
+    #         for line in myDatalist:
+    #             entry = line.split((","))
+    #             name_list.append(entry[0])
+
+    #         if i in name_list:
+    #             print("already Present")
+    #         else:
+    #             now = datetime.now()
+    #             d1 = now.strftime("%d/%m/%Y")
+    #             dtString = now.strftime("%H:%M:%S")
+    #             f.writelines(
+    #                 f"\n     {i},     {r},     {n},         {dtString},     {d1},     Present")
 
  # ================face recognition==================
 
@@ -146,6 +187,8 @@ class Face_Recognition:
                 cursor.execute(
                     "select Course from student where Student_ID="+str(id))
                 d = cursor.fetchone()
+                d = str(d)[2:-3]
+
                 # d="+".join(d)
 
                 cursor.execute(
@@ -154,7 +197,7 @@ class Face_Recognition:
                 i = str(i)[1:-2]
                 # print(i)
 
-                if confidence > 87:
+                if confidence > 85:
                     cv2.putText(
                         img, f"ID:{i}", (x, y-80), cv2.FONT_HERSHEY_COMPLEX, 0.8, (64, 15, 223), 1)
                     cv2.putText(
